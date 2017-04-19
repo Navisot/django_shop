@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+
+    <div class="content-top">
+        <h1>NEW RELEASED</h1>
+        <div class="grid-in">
+            {% for movie in data %}
+            <div class="col-md-3 grid-top">
+                {% load static %}
+                <a href="{% url 'movie_details' movie_id=movie.id  %}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/{{ movie.cover }}" alt="">
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-left    b-delay03 ">
+                            <span>More Details</span>
+                        </h3>
+                    </div>
+                </a>
+                <p><a href="{% url 'movie_details' movie_id=movie.id  %}" title="{{movie.title}}">{{ movie.title | truncatechars:20 }}</a></p><br>
+            <a class="btn btn-warning btn-sm addToCart" href="#" data-id="{{ movie.id }}">Add To Cart</a>
+            </div>
+            {% endfor %}
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <script>
+        $(".addToCart").on('click', function(e){
+            e.preventDefault();
+            var movie_id = $(this).data('id');
+           $.ajax({
+                type: 'POST',
+                url: '{% url "add_to_cart" %}',
+                data: {'movie_id': movie_id, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: 'JSON',
+                success: function(data){
+                    console.log(data);
+                    if (data.status == 'success') {
+                        alert('Movie Added In Your Cart');
+                    } else {
+                        alert('Something Went Wrong');
+                    }
+                },
+                error: function(){
+                    alert('Ajaxian Error');
+                }
+           });
+           window.location.reload(true);
+        });
+    </script>
+
+{% endblock %}

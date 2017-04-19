@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% include 'includes/head.html' %}
+<body>
+
+<!--header-->
+<div class="header">
+
+    {% include "includes/header.html" %}
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="head-top">
+
+            {% include "includes/logo.html" %}
+
+            {% include "includes/right-menu.html" %}
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+</div>
+<!-- End Header -->
+
+<!-- Slideshow -->
+        {% if homepage %}
+	        {% include "includes/slideshow.html" %}
+        {% endif %}
+<!-- End Slideshow -->
+
+<!--content-->
+<div class="content">
+	<div class="container">
+
+	{% block main_content %}
+
+    {% endblock %}
+
+	</div>
+</div>
+
+<!-- Footer -->
+{% include "includes/footer.html" %}
+<!-- End Footer -->
+
+</body>
+</html>

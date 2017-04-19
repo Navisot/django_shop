@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+
+{% block main_content %}
+
+<div class="check">
+
+        <div class="col-md-9 cart-items">
+            <!-- Movie Details From Model -->
+			 <div class="cart-header">
+				 <div class="cart-sec simpleCart_shelfItem">
+						<div class="cart-item cyc">
+                            {% load static %}
+							 <img src="/{{ movie.cover }}" class="img-responsive" alt="" width=""/>
+						</div>
+					   <div class="cart-item-info">
+						<h3><a href="#">{{ movie.title }} ({{ movie.year }})</a></h3><br>
+						<ul class="qty">
+							<li><p class="btn btn-primary btn-xs" style="color:white;font-size:14px;">Available For Rent : {{ movie.quantity }}</p></li><br>
+                            <li><p class="btn btn-success btn-xs" style="color:white;font-size:14px;">Price Per Day : {{ movie.price }} €</p></li>
+						</ul>
+
+							 <div class="delivery">
+							 <div class="clearfix"></div>
+				        </div>
+					   </div>
+                     <desc>{{ movie.description}}</desc>
+					   <div class="clearfix"></div>
+				  </div>
+			 </div>
+            <!-- Youtube Video -->
+            <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item"
+                        src="https://www.youtube.com/embed/{{ video.results.1.key }}">
+                    </iframe>
+            </div>
+
+		 </div>
+            <!-- TMDB DETAILS - API -->
+		  <div class="col-md-3 cart-total">
+			 <p class="details">TMDB Details</p>
+			 <div class="price-details" style="text-align: center;">
+                 <h4><i class="fa fa-star"></i> Rate</h4>
+                <h5 class="api-details">{{ api.vote_average }} ({{ api.vote_count }} Votes)</h5>
+                <div class="clearfix"></div>
+                <br>
+                 <h4><i class="fa fa-tint"></i> Genres:</h4>
+                 {% for genre in api.genres %}
+                    {{ genre.name }}
+                        {% if not forloop.last %}
+                            -
+                        {% endif %}
+				 {% endfor %}
+                 <div class="clearfix"></div>
+                 <br>
+                 <h4><i class="fa fa-link"></i> Homepage:</h4>
+                     <a href="{{ api.homepage }}" target="_blank">{{ api.homepage }}</a>
+                 <div class="clearfix"></div>
+                 <br>
+
+                 <h4><i class="fa fa-language"></i> Original Language</h4>
+                    <h5 class="api-details">{{ api.original_language }}</h5>
+                 <div class="clearfix"></div>
+                 <br>
+
+                 <h4><i class="fa fa-clock-o"></i> Runtime</h4>
+                    <h5 class="api-details">{{ api.runtime }} Minutes</h5>
+                 <div class="clearfix"></div>
+                 <br>
+
+                 <h4><i class="fa fa-usd"></i> Budget</h4>
+                    {% load humanize %}
+                     <h5 class="api-details">$ {{ api.budget|intcomma }}</h5>
+                 <div class="clearfix"></div>
+                 <br>
+
+                 <h4><i class="fa fa-usd"></i> Revenue</h4>
+                    <h5 class="api-details">$ {{ api.revenue|intcomma }}</h5>
+                 <div class="clearfix"></div>
+                 <br>
+			 </div>
+
+
+			 <div class="clearfix"></div>
+			</div>
+
+			<div class="clearfix"> </div>
+	 </div>
+
+{% endblock %}

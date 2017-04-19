@@ -1,0 +1,41 @@
+<div class="header-top">
+<div class="container">
+
+    <div class="search">
+            <form id="search_bar" action="{% url 'multi_search' %}">
+                <input type="text" name="query" placeholder="Search movie,tv,person...">
+                <input type="submit" value="Go">
+            </form>
+    </div>
+
+    <div class="header-left">
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><span class="white-label">Hello {{ user.username }},</span> <a class="logout" href="{% url "auth_logout" %}?next=/">Logout</a></li>
+                {% else %}
+                <li ><a href="{% url "auth_login" %}"  >Login</a></li>
+                <li><a  href="{% url "registration_register" %}"  >Register</a></li>
+                {% endif %}
+
+            </ul>
+            <div class="cart box_1">
+                <a href="{% url "get_cart" %}">
+                <h3>
+                    {% if user.is_authenticated %}
+                    <div class="total">
+                    € {{ total_price }} ( {{ total_items }} items )
+                    </div>
+                    {% endif %}
+                    {% load static %}
+                    <img src="{% static "images/cart.png" %}" alt=""/>
+                </h3>
+                </a>
+
+            </div>
+            <div class="clearfix"> </div>
+    </div>
+
+    <div class="clearfix"> </div>
+
+</div>
+</div>

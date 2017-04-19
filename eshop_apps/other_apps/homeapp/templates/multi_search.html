@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+
+ <div class="content-top">
+        <h1>Results for "{{ keyword }}"</h1>
+        <div class="grid-in">
+            {% if not data %}
+                <h1>No Results</h1>
+            {% else %}
+            {% for result in data.results %}
+            {% if result.profile_path or result.poster_path %}
+            <div class="col-md-3 grid-top">
+                {% load static %}
+                {% if result.id in store_ids %}
+                <!-- Movie Available -->
+                <a href="{% url 'movie_details_by_tmdb' tmdb_id=result.id  %}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{result.poster_path}}" alt="">
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-left    b-delay03 ">
+                            <span>More Details</span>
+                        </h3>
+                    </div>
+                </a>
+                {% else %}
+                <!-- Movie Not Available -->
+                {% if result.poster_path %}
+                <a href="#" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{result.poster_path}}" alt="">
+                </a>
+                {% else %}
+                <a href="#" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{result.profile_path}}" alt="">
+                </a>
+                {% endif %}
+                {% endif %}
+                <p>
+                    {% if result.id in store_ids %}
+                        <a class="addToCart" href="#" title="Add To Cart" data-id="{{result.id}}"><i class="fa fa-shopping-cart orange"></i></a>
+                    {% endif %}
+                    {% if result.original_name %}
+                    <a href="" title="{{result.original_name}}">{{ result.original_name | truncatechars:20 }}</a>
+                    {% elif result.original_title %}
+                    <a href="" title="{{result.original_title}}">{{ result.original_title | truncatechars:20 }}</a>
+                    {% else %}
+                    <a href="" title="{{result.name}}">{{ result.name | truncatechars:20 }}</a>
+                    {% endif %}
+                </p><br>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <script>
+        $(".addToCart").on('click', function(e){
+            e.preventDefault();
+            var tmdb_id = $(this).data('id');
+           $.ajax({
+                type: 'POST',
+                url: '{% url "add_to_cart_tmdb" %}',
+                data: {'tmdb_id': tmdb_id, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: 'JSON',
+                success: function(data){
+                    console.log(data);
+                    if (data.status == 'success') {
+                        alert('Movie Added In Your Cart');
+                    } else {
+                        alert('Something Went Wrong');
+                    }
+                },
+                error: function(){
+                    alert('Ajaxian Error');
+                }
+           });
+           window.location.reload(true);
+        });
+    </script>
+
+{% endblock %}
