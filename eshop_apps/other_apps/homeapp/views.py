@@ -51,6 +51,20 @@ def movie_details_by_tmdb(request, tmdb_id):
     })
 
 
+def movie_details_only_from_tmdb(request, tmdb_id):
+    current_cart = Cart(request)
+    myCart = Cart.get_cart_details(current_cart)
+    api = json.load(urlopen(
+        'https://api.themoviedb.org/3/movie/' + str(tmdb_id) + '?api_key=3a5fa430d771cb147fb889d04e147c3c'))
+    api_videos = json.load(urlopen('https://api.themoviedb.org/3/movie/' + str(tmdb_id) + '/videos?api_key=3a5fa430d771cb147fb889d04e147c3c'))
+    return render(request, 'single_movie_tmdb.html', {
+        'total_items': myCart['total_items'],
+        'total_price': myCart['total_price'],
+        'api': api,
+        'video': api_videos,
+    })
+
+
 def get_movies_by_genre(request, genre_id):
     current_cart = Cart(request)
     myCart = Cart.get_cart_details(current_cart)

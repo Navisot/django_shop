@@ -65,23 +65,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            <state relative-caret-position="231">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -92,8 +80,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="55" column="48" lean-forward="true" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="486">
+              <caret line="57" column="105" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="105" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -101,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/templates/includes/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="273">
+              <caret line="13" column="128" lean-forward="false" selection-start-line="13" selection-start-column="128" selection-end-line="13" selection-end-column="128" />
               <folding />
             </state>
           </provider>
@@ -114,9 +102,41 @@
       <file leaf-file-name="multi_search.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+            <state relative-caret-position="525">
+              <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single_movie_tmdb.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie_tmdb.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="single_movie.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="768">
+              <caret line="113" column="13" lean-forward="false" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom_date.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/custom_date.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,8 +154,8 @@
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="94" lean-forward="false" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
+            <state relative-caret-position="145">
+              <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="49" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -156,8 +176,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -184,10 +204,15 @@
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html" />
         <option value="$PROJECT_DIR$/eshop_apps/static/css/custom.css" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/keywords_movies.html" />
-        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py" />
         <option value="$PROJECT_DIR$/eshop_apps/templates/includes/header.html" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/__init__.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/extras.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/custom_date.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie_tmdb.html" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie.html" />
       </list>
     </option>
   </component>
@@ -355,6 +380,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templatetags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dvdstore_env" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dvdstore_env" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eshop_apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="other_apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homeapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -413,7 +464,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="header&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;custo&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;cart&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="single&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/single_movie.html&#10;header&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;custo&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;cart&#9;null&#9;null" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -901,8 +952,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        <state relative-caret-position="231">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -911,18 +962,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="55" column="48" lean-forward="true" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+        <state relative-caret-position="486">
+          <caret line="57" column="105" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="105" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html">
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/extras.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="94" lean-forward="false" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
+        <state relative-caret-position="189">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -935,18 +994,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html">
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/custom_date.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="49" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="113" column="13" lean-forward="false" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eshop_apps/templates/includes/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="273">
+          <caret line="13" column="128" lean-forward="false" selection-start-line="13" selection-start-column="128" selection-end-line="13" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie_tmdb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
           <folding />
         </state>
       </provider>

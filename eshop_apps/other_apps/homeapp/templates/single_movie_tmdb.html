@@ -11,21 +11,15 @@
 				 <div class="cart-sec simpleCart_shelfItem">
 						<div class="cart-item cyc">
                             {% load static %}
-							 <img src="/{{ movie.cover }}" class="img-responsive" alt="" width=""/>
+							 <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{ api.poster_path }}" class="img-responsive" alt="" width=""/>
 						</div>
 					   <div class="cart-item-info">
-						<h3><a href="#">{{ movie.title }} ({{ movie.year }})</a></h3><br>
-						<ul class="qty">
-							<li><p class="btn btn-primary btn-xs" style="color:white;font-size:14px;">Available For Rent : {{ movie.quantity }}</p></li><br>
-                            <li><p class="btn btn-success btn-xs" style="color:white;font-size:14px;">Price Per Day : {{ movie.price }} €</p></li><br>
-                            <li><a href="#" class="btn btn-xs btn-warning addToCart" data-id="{{movie.id}}">Add To Cart</a></li>
-						</ul>
-
+						<h3><a href="#">{{ api.title }} ({{ api.release_date|slice:":4" }})</a></h3><br>
 							 <div class="delivery">
 							 <div class="clearfix"></div>
 				        </div>
 					   </div>
-                     <desc>{{ movie.description}}</desc>
+                     <desc>{{ api.overview}}</desc>
 					   <div class="clearfix"></div>
 				  </div>
 			 </div>
@@ -87,30 +81,5 @@
 
 			<div class="clearfix"> </div>
 	 </div>
-
-<script>
-        $(".addToCart").on('click', function(e){
-            e.preventDefault();
-            var movie_id = $(this).data('id');
-           $.ajax({
-                type: 'POST',
-                url: '{% url "add_to_cart" %}',
-                data: {'movie_id': movie_id, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
-                dataType: 'JSON',
-                success: function(data){
-                    console.log(data);
-                    if (data.status == 'success') {
-                        alert('Movie Added In Your Cart');
-                    } else {
-                        alert('Something Went Wrong');
-                    }
-                },
-                error: function(){
-                    alert('Ajaxian Error');
-                }
-           });
-           window.location.reload(true);
-        });
-    </script>
 
 {% endblock %}

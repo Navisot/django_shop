@@ -24,10 +24,16 @@
                 {% else %}
                 <!-- Movie Not Available -->
                 {% if result.poster_path %}
-                <a href="#" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{result.poster_path}}" alt="">
+                <a href="{% url 'movie_details_only_by_tmdb' tmdb_id=result.id %}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{result.poster_path}}" alt="">
+                <div class="b-wrapper">
+                        <h3 class="b-animate b-from-left    b-delay03 ">
+                            <span>More Details</span>
+                        </h3>
+                    </div>
                 </a>
                 {% else %}
-                <a href="#" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{result.profile_path}}" alt="">
+                <a href="" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{result.profile_path}}" alt="">
+
                 </a>
                 {% endif %}
                 {% endif %}
