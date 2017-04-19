@@ -7,7 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from ..homeapp.models import Movies
-
+from ..shopping_cart.models import Reservations
+import sys
 
 @login_required
 def add_to_cart(request):
@@ -64,3 +65,17 @@ def get_cart(request):
         'total_items': myCart['total_items'],
         'total_price': myCart['total_price'],
     })
+
+@login_required
+def checkout(request):
+    current_cart = Cart(request)
+    myList = ",".join([str(item.product.id) for item in current_cart])
+    new_reservation = Reservations(
+        delivery_time='2017-04-20 20:00:00',
+        user_id=request.user.id,
+        session_user_id=request.session.session_key,
+        shopping_cart=myList,
+        invoice_number=123456,
+    )
+    new_reservation.save()
+    return HttpResponse("Reservation Completed")
