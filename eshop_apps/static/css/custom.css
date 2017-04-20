@@ -55,3 +55,14 @@ p.details {
 i.fa.fa-shopping-cart.orange {
     color: #da7223;
 }
+
+span.delivery_details {
+    color: chocolate;
+}
+
+.border-box-details {
+    border: 1px solid black;
+    padding-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

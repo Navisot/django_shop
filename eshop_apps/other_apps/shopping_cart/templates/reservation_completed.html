@@ -3,21 +3,17 @@
 {% block main_content %}
 
     <div class="check">
-            {% if total_items <= 0 %}
 
-                <h1>Your Shopping Cart is Empty</h1>
-                <div class="text-left">
-                    <a style="font-size:14px;" href="{% url "index" %}" class="btn btn-success btn-xs">Click to select a movie for rent!</a>
-                </div>
-            {% else %}
-			 <h1>Selected Movies For Rent ({{ total_items }})</h1>
-            {% endif %}
-
-        <div class="col-md-9 cart-items">
+        <div class="col-md-12 cart-items">
+            <div class="border-box-details">
+                <br>
+            <h2 class="text-center"><sup>***</sup> Your Order Has Been Completed! <sup>***</sup></h2><br>
+            <h5 class="text-center" style="text-decoration:underline;">You have choose <span class="delivery_details">{{delivery_date|date:"d M Y"}} | {{delivery_time|date:"H:i"}}</span> as delivery details!</h5><br>
+            <h5 class="text-center"><a href="{% url 'user_history'%}" style="font-size:20px;">Show My History</a></h5><br><br>
+            </div>
+            <h3 class="text-center" style="color:#758092;">The movies you chosen for Rent are shown below:</h3><br><br>
              {% for item in cart %}
 			 <div class="cart-header">
-				 <div class="close1" data-id="{{ item.product.id }}">
-                 </div>
 				 <div class="cart-sec simpleCart_shelfItem">
 						<div class="cart-item cyc">
                             {% load static %}
@@ -42,30 +38,6 @@
 			 </div>
              {% endfor %}
 		 </div>
-		  <div class="col-md-3 cart-total">
-			 <a class="continue" href="{% url "index" %}">Continue to store</a>
-			 <div class="price-details">
-				 <h3>Price Details</h3>
-				 <span style="font-weight: bold; font-size: 12px;">Total Price Per Day:</span>
-				 <span class="total1">{{ total_price }} €</span>
-				 <div class="clearfix"></div>
-			 </div>
-
-
-			 <div class="clearfix"></div>
-			  <br>
-			  <h4>Required Delivery Details</h4><br>
-			  <form action="{% url 'checkout_view' %}" method="post">
-				  {% csrf_token %}
-				  <label for="datepicker">Delivery Date: <sup>*</sup></label><br>
-				  <input type="text" id="datepicker" size="35" name="datepicker" required><br>
-				  <label for="timepicker">Delivery Time: <sup>*</sup></label><br>
-				  <input type="text" id="timepicker" size="35" name="timepicker" required><br><br>
-			 		<input type="submit" class="btn btn-success btn-block" {% if total_items == 0 %} disabled {% endif %} value="Place Order"/>
-			  </form>
-			</div>
-
-
 			<div class="clearfix"> </div>
 	 </div>
     <script>

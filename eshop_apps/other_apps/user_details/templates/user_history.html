@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+
+    <div class="check">
+
+        <div class="col-md-12 cart-items">
+             {% for order in orders %}
+			 <div class="cart-header">
+				 {{order.id}}
+			 </div>
+             {% endfor %}
+		 </div>
+			<div class="clearfix"> </div>
+	 </div>
+    <script>
+		$('#timepicker').timepicker({ 'timeFormat': 'H:i:s' });
+		$( "#datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+
+        $(".close1").on('click', function(){
+
+            var con = confirm('Are you sure you want to delete this movie from your cart?');
+
+            if (con) {
+                var movie_id = $(this).data('id');
+                $.ajax({
+                    type:'post',
+                    url: '{% url "remove_from_cart" %}',
+                    data: {'movie_id': movie_id, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                    dataType: 'JSON',
+                    success: function(data){
+                        if(data.status == 'success'){
+                            alert('Movie Deleted From Cart');
+                        } else {
+                           alert('Something Went Wrong');
+                        }
+                    },
+                    error: function(){
+                        alert('Ajaxian Error');
+                    }
+                });
+                window.location.reload(true);
+            }
+
+        });
+    </script>
+{% endblock %}

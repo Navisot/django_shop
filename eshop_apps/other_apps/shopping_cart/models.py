@@ -5,11 +5,12 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 
+
 class Reservations(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(default=datetime.now, blank=True)
-    delivery_time = models.DateTimeField(blank=True)
-    invoice_number = models.IntegerField(blank=True)
+    delivery_time = models.TimeField(blank=True, null=True)
+    delivery_date = models.DateField(blank=True, null=True)
     session_user_id = models.TextField(blank=True)
     shopping_cart = models.TextField(blank=True, null=True)
 

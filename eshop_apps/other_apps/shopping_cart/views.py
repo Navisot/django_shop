@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from ..homeapp.models import Movies
 from ..shopping_cart.models import Reservations
-import sys
+import datetime
 
 @login_required
 def add_to_cart(request):
@@ -68,14 +68,62 @@ def get_cart(request):
 
 @login_required
 def checkout(request):
+    # Get Current Cart
     current_cart = Cart(request)
+    # END
+
+    # Check If Cart Is Empty And Return To Homepage
+    myCart = Cart.get_cart_details(current_cart)
+    if myCart['total_items'] == 0:
+        context = Movies.objects.all()
+        return render(request, 'homepage.html', {
+            'data': context,
+            'homepage': True,
+            'total_items': myCart['total_items'],
+            'total_price': myCart['total_price'],
+        })
+    # END
+
+    # Create List To Store In DB
     myList = ",".join([str(item.product.id) for item in current_cart])
+    # END
+
+    # Get Post DateTime Details And Create DateTime Objects
+    delivery_time = request.POST.get('timepicker')
+    delivery_date = request.POST.get('datepicker')
+    object_date = datetime.datetime.strptime(delivery_date, '%d-%m-%Y')
+    object_time = datetime.datetime.strptime(delivery_time, '%H:%M:%S')
+    # END
+
+    # Format Date To Store In DB
+    dt_store = object_date.date()
+    # END
+
+    # Save Cart Details In Order To Appear Later On Checkout Details
+    cart_details_for_template = []
+    for item in Cart(request):
+        cart_details_for_template.append(item)
+    # END
+
+    # Add New Reservation
     new_reservation = Reservations(
-        delivery_time='2017-04-20 20:00:00',
         user_id=request.user.id,
         session_user_id=request.session.session_key,
         shopping_cart=myList,
-        invoice_number=123456,
+        delivery_date=dt_store,
+        delivery_time=delivery_time,
     )
     new_reservation.save()
-    return HttpResponse("Reservation Completed")
+    # END
+
+    # Clear Current Cart
+    current_cart.clear()
+    # END
+
+    return render(request, 'reservation_completed.html', {
+        'cart': cart_details_for_template,
+        'delivery_time': object_time,
+        'delivery_date': object_date,
+        'total_items': 0,
+        'total_price': 0,
+    })
