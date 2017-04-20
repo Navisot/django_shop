@@ -6,7 +6,9 @@
 
         <div class="col-md-12 cart-items">
             <h1 class="text-center">User History</h1>
-
+            {% if not orders %}
+                <h1>You haven't made any orders yet.</h1>
+            {% else %}
              {% for order in orders %}
 			 <div class="cart-header">
                  <div class="history-details">
@@ -21,6 +23,7 @@
                  </div>
 			 </div>
              {% endfor %}
+            {% endif %}
 		 </div>
 			<div class="clearfix"> </div>
 	 </div>

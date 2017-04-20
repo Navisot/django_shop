@@ -1,0 +1,63 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+
+{% block main_content %}
+    <div class="register">
+<form method="post" action="" style="width:50%; margin: 0 auto;">
+    {% csrf_token %}
+    <div class="col-md-12 register-top-grid">
+    <h3 class="text-center">Become Member</h3>
+        <div>
+           <span>Username</span>
+            {{ form.username }}
+        </div>
+        {% if form.username.errors %}
+        <div class="alert alert-danger">{{ form.username.errors }}</div>
+        {% endif %}
+        <div>
+            <span>Email</span>
+            <input type="text" name="email" id="id_email">
+        </div>
+        {% if form.email.errors %}
+        <div class="alert alert-danger">{{ form.email.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="col-md-12 register-bottom-grid" style="margin-bottom:40px">
+        <div>
+            <span>Password</span>
+            {{ form.password1 }}
+        </div>
+        {% if form.password1.errors %}
+        <div class="alert alert-danger">{{ form.password1.errors }}</div>
+        {% endif %}
+        <div>
+            <span>Verify Password</span>
+            {{ form.password2 }}
+        </div>
+        {% if form.password2.errors %}
+        <div class="alert alert-danger">{{ form.password2.errors }}</div>
+        {% endif %}
+        <input type="submit" style="width: 100%;" value="{% trans 'Complete Registration' %}" />
+    </div>
+
+    <div class="text-center">Already Member? <a href="{%   url "auth_login" %}">Log in</a></div>
+    <div class="clearfix"></div>
+</form>
+    </div>
+
+{% endblock %}
+
+
+{% comment %}
+**registration/registration_form.html**
+Used to show the form users will fill out to register. By default, has
+the following context:
+
+``form``
+    The registration form. This will be an instance of some subclass
+    of ``django.forms.Form``; consult `Django's forms documentation
+    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+    information on how to display this in a template.
+{% endcomment %}

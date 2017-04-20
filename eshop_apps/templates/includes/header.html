@@ -12,6 +12,7 @@
             <ul>
                 {% if user.is_authenticated %}
                     <li><span class="white-label">Hello {{ user.username }},</span> <a class="logout" href="{% url 'auth_logout' %}?next=/">Logout</a></li>
+                <li><a href="{% url 'user_history' %}">User History</a></li>
                 {% else %}
                 <li ><a href="{% url 'auth_login' %}"  >Login</a></li>
                 <li><a  href="{% url 'registration_register' %}"  >Register</a></li>
