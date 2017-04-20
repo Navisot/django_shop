@@ -67,6 +67,16 @@ def get_cart(request):
         'total_price': myCart['total_price'],
     })
 
+
+def get_checkout_review(request):
+    current_cart = Cart(request)
+    myCart = Cart.get_cart_details(current_cart)
+    return render(request, 'checkout_review.html', {
+        'cart': Cart(request),
+        'total_items': myCart['total_items'],
+        'total_price': myCart['total_price'],
+    })
+
 @login_required
 def checkout(request):
 
@@ -79,20 +89,32 @@ def checkout(request):
     last_name = logged_in_user.last_name
     email = logged_in_user.email
     error_message = "Please Fill In Your Personal Details (First Name, Last Name) In USER PROFILE section."
+    telephone_error = 'Please correct the telephone number.'
+
+    telephone = request.POST.get('telephone')
+    company = request.POST.get('company_name')
+
+    if telephone and not telephone.isdigit():
+        return render(request, 'checkout_review.html', {
+            'error_message': telephone_error,
+            'cart': Cart(request),
+            'total_items': myCart['total_items'],
+            'total_price': myCart['total_price']})
+
     if not first_name:
-        return render(request, 'cart.html', {
+        return render(request, 'checkout_review.html', {
             'error_message': error_message,
             'cart': Cart(request),
             'total_items': myCart['total_items'],
             'total_price': myCart['total_price']})
     if not last_name:
-        return render(request, 'cart.html', {
+        return render(request, 'checkout_review.html', {
             'error_message': error_message,
             'cart': Cart(request),
             'total_items': myCart['total_items'],
             'total_price': myCart['total_price']})
     if not email:
-        return render(request, 'cart.html', {
+        return render(request, 'checkout_review.html', {
             'error_message': error_message,
             'cart': Cart(request),
             'total_items': myCart['total_items'],
@@ -153,6 +175,8 @@ def checkout(request):
         first_name=first_name,
         last_name=last_name,
         email=email,
+        telephone=telephone,
+        company=company,
     )
     new_invoice.save()
     # END

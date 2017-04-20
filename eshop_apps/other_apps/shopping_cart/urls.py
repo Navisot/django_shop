@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^add/tmdb/$', views.add_to_cart, name="add_to_cart_tmdb"),
     url(r'^remove/$', views.remove_from_cart, name="remove_from_cart"),
     url(r'^show$', views.get_cart, name="get_cart"),
+    url(r'^show/review', views.get_checkout_review, name="get_checkout_review"),
 ]

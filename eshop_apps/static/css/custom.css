@@ -104,3 +104,17 @@ h4.fixed {
     font-style: italic;
     letter-spacing: 2px;
 }
+
+span.price_special {
+    background: gainsboro;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 20%;
+    opacity: 0.8;
+    font-size: 17px;
+}
+
+.text-center.special {
+   margin:20px;
+}

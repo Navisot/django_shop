@@ -14,9 +14,9 @@
 			 <h1>Selected Movies For Rent ({{ total_items }})</h1>
             {% endif %}
 
-        <div class="col-md-9 cart-items">
+        <div class="col-md-12 cart-items">
              {% for item in cart %}
-			 <div class="cart-header">
+			 <div class="cart-header col-md-4">
 				 <div class="close1" data-id="{{ item.product.id }}">
                  </div>
 				 <div class="cart-sec simpleCart_shelfItem">
@@ -36,40 +36,47 @@
 							 <div class="clearfix"></div>
 				        </div>
 					   </div>
-                     <desc>{{ item.product.description|truncatewords:"120" }}</desc>
+                     <desc>{{ item.product.description|truncatewords:"15" }}</desc>
 					   <div class="clearfix"></div>
 
 				  </div>
 			 </div>
              {% endfor %}
 		 </div>
-		  <div class="col-md-3 cart-total">
-			 <a class="continue" href="{% url "index" %}">Continue to store</a>
-				 <div style="font-weight: bold; font-size: 17px; text-align: center;">Total Items</div>
-			  		<div class="text-center special"><span class="price_special">{{ total_items }}</span></div>
-				 <div style="font-weight: bold; font-size: 17px; text-align: center;">Total Price Per Day</div>
-			  		<div class="text-center special"><span class="price_special">{{ total_price }} €</span></div>
+		  <div class="col-md-12 cart-total">
+			 <div class="price-details">
+				 <h1>Price Details</h1>
+				 <span style="font-weight: bold; font-size: 16px; margin-top: -35px;">Total Price Per Day: {{ total_price }} €</span>
 				 <div class="clearfix"></div>
-			<h4><a class="btn btn-success btn-block" href="{% url 'get_checkout_review' %}">Continue To Checkout</a></h4>
+			 </div>
 
-			 <!--<div class="clearfix"></div>-->
-			  <!--<br>-->
-			  <!--<strong style="text-decoration: underline;">Important (Invoice Details):</strong><br>-->
-			  <!--In order to place order you must first fill in your personal details in <a href="{% url 'user_profile' %}">user profile</a> section.<br><br>-->
-			  <!--<h4>1. Required Delivery Details</h4><br>-->
-			  <!--<form action="{% url 'checkout_view' %}" method="post">-->
-				  <!--{% csrf_token %}-->
-				  <!--<label for="datepicker">Delivery Date: <sup>*</sup></label><br>-->
-				  <!--<input type="text" id="datepicker" size="35" name="datepicker" required><br>-->
-				  <!--<label for="timepicker">Delivery Time: <sup>*</sup></label><br>-->
-				  <!--<input type="text" id="timepicker" size="35" name="timepicker" required><br><br>-->
-				  <!--<h4>2. Optional Invoice Details</h4><br>-->
-				  <!--<label for="company_name">Company Name:</label><br>-->
-				  <!--<input type="text" id="company_name" size="35" name="company_name"><br>-->
-				  <!--<label for="telephone">Telephone:</label><br>-->
-				  <!--<input type="text" id="telephone" size="35" name="telephone"><br><br>-->
-			 		<!--<input type="submit" class="btn btn-success btn-block" {% if total_items == 0 %} disabled {% endif %} value="Place Order"/>-->
-			  <!--</form>-->
+
+			 <div class="clearfix"></div>
+			  <br>
+			  <strong style="text-decoration: underline; font-size:16px; color:brown;">Important (Invoice Details):</strong><br>
+			  <h5>In order to place order you must first fill in your personal details in <a href="{% url 'user_profile' %}">user profile</a> section.</h5><br>
+			  <h4>1. Required Delivery Details</h4><br>
+			  <form action="{% url 'checkout_view' %}" method="post">
+				  {% csrf_token %}
+				  <div class="form-group">
+				  	<label for="datepicker">Delivery Date: <sup>*</sup></label>
+				  	<input type="text" id="datepicker" size="35" name="datepicker" required class="form-control">
+				  </div>
+				  <div class="form-group">
+					  <label for="timepicker">Delivery Time: <sup>*</sup></label>
+					  <input type="text" id="timepicker" size="35" name="timepicker" required class="form-control">
+				  </div>
+				  <h4>2. Optional Invoice Details</h4><br>
+				  <div class="form-group">
+					  <label for="company_name">Company Name:</label><br>
+					  <input type="text" id="company_name" size="35" name="company_name" class="form-control">
+				  </div>
+				  <div class="form-group">
+					  <label for="telephone">Telephone:</label><br>
+					  <input type="text" id="telephone" size="35" name="telephone" onkeypress="return isNumber(event)" class="form-control">
+				  </div>
+			 		<input type="submit" class="btn btn-success btn-block" {% if total_items == 0 %} disabled {% endif %} value="Place Order"/>
+			  </form>
 			</div>
 
 
@@ -105,5 +112,14 @@
             }
 
         });
+
+        function isNumber(evt) {
+			evt = (evt) ? evt : window.event;
+			var charCode = (evt.which) ? evt.which : evt.keyCode;
+			if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+				return false;
+			}
+			return true;
+		}
     </script>
 {% endblock %}
