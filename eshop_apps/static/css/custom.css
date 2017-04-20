@@ -66,3 +66,41 @@ span.delivery_details {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
+.history-details {
+    text-align: center;
+    background: whitesmoke;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    margin: 30px;
+    border-bottom: 0;
+    position: relative;
+}
+
+p.selected_movie {
+
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    margin: 5px;
+}
+
+.history_date {
+    position: absolute;
+    top: -12px;
+    left: -30px;
+    border: 1px solid white;
+    background: #b3ce47;
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+h4.fixed {
+    font-size: 15px;
+    font-weight: lighter;
+    font-style: italic;
+    letter-spacing: 2px;
+}

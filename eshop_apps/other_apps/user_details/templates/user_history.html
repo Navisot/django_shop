@@ -5,9 +5,20 @@
     <div class="check">
 
         <div class="col-md-12 cart-items">
+            <h1 class="text-center">User History</h1>
+
              {% for order in orders %}
 			 <div class="cart-header">
-				 {{order.id}}
+                 <div class="history-details">
+                     <div class="history_date">
+                         <h4 class="fixed">{{order.created|date:"d-m-Y"}}</h4>
+                     </div>
+                     <h2>Order #{{forloop.counter}}</h2><br>
+                     <h4>Selected Movies:</h4>
+                            {% for m in movies %}
+                                {% if m.order_id == order.id %} <p class="selected_movie"><a href="{% url 'movie_details' m.movie_id %}">{{ m.title }}</a></p> {% endif %}
+                            {% endfor %}
+                 </div>
 			 </div>
              {% endfor %}
 		 </div>
