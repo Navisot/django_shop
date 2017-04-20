@@ -4,10 +4,11 @@ from __future__ import unicode_literals
 import json
 from cart.cart import Cart
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from ..homeapp.models import Movies
-from ..shopping_cart.models import Reservations
+from ..shopping_cart.models import Orders, Invoices
 import datetime
 
 @login_required
@@ -68,12 +69,40 @@ def get_cart(request):
 
 @login_required
 def checkout(request):
+
+    # Get Current Cart
+    current_cart = Cart(request)
+    # END
+    myCart = Cart.get_cart_details(current_cart)
+    logged_in_user = User.objects.get(pk=request.user.id)
+    first_name = logged_in_user.first_name
+    last_name = logged_in_user.last_name
+    email = logged_in_user.email
+    error_message = "Please Fill In Your Personal Details (First Name, Last Name) In USER PROFILE section."
+    if not first_name:
+        return render(request, 'cart.html', {
+            'error_message': error_message,
+            'cart': Cart(request),
+            'total_items': myCart['total_items'],
+            'total_price': myCart['total_price']})
+    if not last_name:
+        return render(request, 'cart.html', {
+            'error_message': error_message,
+            'cart': Cart(request),
+            'total_items': myCart['total_items'],
+            'total_price': myCart['total_price']})
+    if not email:
+        return render(request, 'cart.html', {
+            'error_message': error_message,
+            'cart': Cart(request),
+            'total_items': myCart['total_items'],
+            'total_price': myCart['total_price'],})
+
     # Get Current Cart
     current_cart = Cart(request)
     # END
 
     # Check If Cart Is Empty And Return To Homepage
-    myCart = Cart.get_cart_details(current_cart)
     if myCart['total_items'] == 0:
         context = Movies.objects.all()
         return render(request, 'homepage.html', {
@@ -106,21 +135,33 @@ def checkout(request):
     # END
 
     # Add New Reservation
-    new_reservation = Reservations(
+    new_order = Orders(
         user_id=request.user.id,
         session_user_id=request.session.session_key,
         shopping_cart=myList,
         delivery_date=dt_store,
         delivery_time=delivery_time,
     )
-    new_reservation.save()
+    new_order.save()
+    # END
+
+    # Add new Invoice
+    new_invoice = Invoices(
+        user_id=request.user.id,
+        session_user_id=request.session.session_key,
+        shopping_cart=myList,
+        first_name=first_name,
+        last_name=last_name,
+        email=email,
+    )
+    new_invoice.save()
     # END
 
     # Clear Current Cart
     current_cart.clear()
     # END
 
-    return render(request, 'reservation_completed.html', {
+    return render(request, 'order_completed.html', {
         'cart': cart_details_for_template,
         'delivery_time': object_time,
         'delivery_date': object_date,

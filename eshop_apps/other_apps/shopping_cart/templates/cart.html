@@ -10,6 +10,7 @@
                     <a style="font-size:14px;" href="{% url "index" %}" class="btn btn-success btn-xs">Click to select a movie for rent!</a>
                 </div>
             {% else %}
+			{% if error_message %} <div class="alert alert-danger">{{ error_message }}</div> {% endif %}
 			 <h1>Selected Movies For Rent ({{ total_items }})</h1>
             {% endif %}
 
@@ -54,6 +55,8 @@
 
 			 <div class="clearfix"></div>
 			  <br>
+			  <strong>Important (Invoice Details):</strong><br>
+			  In order to place order you must first fill in your personal details in <a href="{% url 'user_profile' %}">user profile</a> section.<br><br>
 			  <h4>Required Delivery Details</h4><br>
 			  <form action="{% url 'checkout_view' %}" method="post">
 				  {% csrf_token %}
