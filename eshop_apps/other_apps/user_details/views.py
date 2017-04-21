@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from ..shopping_cart.models import Orders
+from ..shopping_cart.models import Orders, Invoices
 from ..homeapp.models import Movies
 from cart.cart import Cart
 from reportlab.pdfgen import canvas
@@ -16,6 +16,7 @@ def get_user_history(request):
     myCart = Cart.get_cart_details(current_cart)
     user_id = request.user.id
     orders = Orders.objects.filter(user_id=user_id)
+    invoices = Invoices.objects.filter(user_id=user_id)
     full_results = []
     for order in orders:
         temp_movies = order.shopping_cart
@@ -30,6 +31,7 @@ def get_user_history(request):
     return render(request, 'user_history.html', {
         'orders': orders,
         'movies': total,
+        'invoices': invoices,
         'total_items': myCart['total_items'],
         'total_price': myCart['total_price'],
     })
@@ -82,7 +84,7 @@ def save_personal_details(request):
             'total_price': myCart['total_price'],
         })
 
-def some_view(request):
+def some_view(request, invoice_id):
     # Create the HttpResponse object with the appropriate PDF headers.
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'

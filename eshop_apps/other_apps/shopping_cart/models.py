@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 
-
 class Orders(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(default=datetime.now, blank=True)
@@ -21,12 +20,14 @@ class Orders(models.Model):
 class Invoices(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(default=datetime.now, blank=True)
+    order = models.ForeignKey(Orders, null=True, on_delete=models.CASCADE)
+    invoice_identifier = models.IntegerField(null=True)
     session_user_id = models.TextField(blank=True)
     shopping_cart = models.TextField(blank=True, null=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
-    telephone = models.IntegerField(blank=True, null=True)
+    telephone = models.CharField(max_length=255, null=True)
     company = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):

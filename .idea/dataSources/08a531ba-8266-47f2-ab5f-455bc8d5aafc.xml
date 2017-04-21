@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-04-20.20:46:11.198</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1335</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-04-21.14:35:21.988</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1412</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -184,11 +184,11 @@
     </table>
     <table id="43" parent="3" name="shopping_cart_invoices">
       <ObjectId>16949</ObjectId>
-      <StateNumber>1335</StateNumber>
+      <StateNumber>1412</StateNumber>
     </table>
     <table id="44" parent="3" name="shopping_cart_orders">
       <ObjectId>16910</ObjectId>
-      <StateNumber>1330</StateNumber>
+      <StateNumber>1410</StateNumber>
     </table>
     <column id="45" parent="26" name="id">
       <Position>1</Position>
@@ -1134,84 +1134,105 @@ model</ColNames>
       <NotNull>1</NotNull>
       <StateNumber>1335</StateNumber>
     </column>
-    <index id="209" parent="43" name="shopping_cart_invoices_pkey">
+    <column id="209" parent="43" name="order_id">
+      <Position>13</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>1410</StateNumber>
+    </column>
+    <column id="210" parent="43" name="invoice_identifier">
+      <Position>14</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1412</StateNumber>
+    </column>
+    <index id="211" parent="43" name="shopping_cart_invoices_pkey">
       <ObjectId>16956</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="210" parent="43" name="shopping_cart_invoices_user_id_a5212739">
+    <index id="212" parent="43" name="shopping_cart_invoices_user_id_a5212739">
       <ObjectId>16963</ObjectId>
       <ColNames>user_id</ColNames>
     </index>
-    <key id="211" parent="43" name="shopping_cart_invoices_pkey">
+    <index id="213" parent="43" name="shopping_cart_invoices_order_id_872fb5f6">
+      <ObjectId>16971</ObjectId>
+      <ColNames>order_id</ColNames>
+    </index>
+    <key id="214" parent="43" name="shopping_cart_invoices_pkey">
       <ObjectId>16957</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>shopping_cart_invoices_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="212" parent="43" name="shopping_cart_invoices_user_id_a5212739_fk_auth_user_id">
+    <foreign-key id="215" parent="43" name="shopping_cart_invoices_user_id_a5212739_fk_auth_user_id">
       <ObjectId>16958</ObjectId>
       <ColNames>user_id</ColNames>
       <RefTableName>auth_user</RefTableName>
       <RefKeyName>auth_user_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="213" parent="44" name="id">
+    <foreign-key id="216" parent="43" name="shopping_cart_invoic_order_id_872fb5f6_fk_shopping_">
+      <ObjectId>16972</ObjectId>
+      <ColNames>order_id</ColNames>
+      <RefTableName>shopping_cart_orders</RefTableName>
+      <RefKeyName>shopping_cart_reservations_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="217" parent="44" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1215</StateNumber>
       <DefaultExpression>nextval(&apos;shopping_cart_reservations_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="214" parent="44" name="created">
+    <column id="218" parent="44" name="created">
       <Position>2</Position>
       <DataType>timestamp with time zone|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1215</StateNumber>
     </column>
-    <column id="215" parent="44" name="delivery_time">
+    <column id="219" parent="44" name="delivery_time">
       <Position>3</Position>
       <DataType>time|0</DataType>
       <StateNumber>1228</StateNumber>
     </column>
-    <column id="216" parent="44" name="user_id">
+    <column id="220" parent="44" name="user_id">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1223</StateNumber>
     </column>
-    <column id="217" parent="44" name="session_user_id">
+    <column id="221" parent="44" name="session_user_id">
       <Position>6</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1219</StateNumber>
     </column>
-    <column id="218" parent="44" name="shopping_cart">
+    <column id="222" parent="44" name="shopping_cart">
       <Position>7</Position>
       <DataType>text|0</DataType>
       <StateNumber>1219</StateNumber>
     </column>
-    <column id="219" parent="44" name="delivery_date">
+    <column id="223" parent="44" name="delivery_date">
       <Position>8</Position>
       <DataType>date|0</DataType>
       <StateNumber>1228</StateNumber>
     </column>
-    <index id="220" parent="44" name="shopping_cart_reservations_pkey">
+    <index id="224" parent="44" name="shopping_cart_reservations_pkey">
       <ObjectId>16914</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="221" parent="44" name="shopping_cart_reservations_user_id_id_232ee8e3">
+    <index id="225" parent="44" name="shopping_cart_reservations_user_id_id_232ee8e3">
       <ObjectId>16921</ObjectId>
       <ColNames>user_id</ColNames>
     </index>
-    <key id="222" parent="44" name="shopping_cart_reservations_pkey">
+    <key id="226" parent="44" name="shopping_cart_reservations_pkey">
       <ObjectId>16915</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>shopping_cart_reservations_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="223" parent="44" name="shopping_cart_reservations_user_id_a0e00a4d_fk_auth_user_id">
+    <foreign-key id="227" parent="44" name="shopping_cart_reservations_user_id_a0e00a4d_fk_auth_user_id">
       <ObjectId>16934</ObjectId>
       <ColNames>user_id</ColNames>
       <RefTableName>auth_user</RefTableName>

@@ -10,6 +10,7 @@ from django.shortcuts import render, redirect
 from ..homeapp.models import Movies
 from ..shopping_cart.models import Orders, Invoices
 import datetime
+import random
 
 @login_required
 def add_to_cart(request):
@@ -167,9 +168,19 @@ def checkout(request):
     new_order.save()
     # END
 
+    # Get Latest Order Id
+    last_order_id = Orders.objects.latest('id')
+    #END
+
+    # Generate Random Invoice Number
+    random_number = str(random.randint(1000000, 10000000))
+    # END
+
     # Add new Invoice
     new_invoice = Invoices(
         user_id=request.user.id,
+        order=last_order_id,
+        invoice_identifier=random_number,
         session_user_id=request.session.session_key,
         shopping_cart=myList,
         first_name=first_name,

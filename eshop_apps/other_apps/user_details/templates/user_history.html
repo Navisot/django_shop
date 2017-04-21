@@ -21,6 +21,9 @@
                             {% for m in movies %}
                                 {% if m.order_id == order.id %} <p class="selected_movie"><a href="{% url 'movie_details' m.movie_id %}">{{ m.title }}</a></p> {% endif %}
                             {% endfor %}
+                     {% for invoice in invoices %}
+                         {% if order.id == invoice.order_id %} <a href="{% url 'invoice_pdf' invoice.id %}">Download Invoice</a>  {% endif %}
+                     {% endfor %}
                  </div>
 			 </div>
              {% endfor %}
