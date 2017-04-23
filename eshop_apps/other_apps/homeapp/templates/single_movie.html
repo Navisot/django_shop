@@ -16,7 +16,7 @@
 					   <div class="cart-item-info">
 						<h3><a href="#">{{ movie.title }} ({{ movie.year }})</a></h3><br>
 						<ul class="qty">
-							<li><p class="btn btn-primary btn-xs" style="color:white;font-size:14px;">Available For Rent : {{ movie.quantity }}</p></li><br>
+							<li><p class="btn btn-primary btn-xs" style="color:white;font-size:14px;">Available For Rent : {{ movie_quantity }}</p></li><br>
                             <li><p class="btn btn-success btn-xs" style="color:white;font-size:14px;">Price Per Day : {{ movie.price }} €</p></li><br>
                             <li><a href="#" class="btn btn-xs btn-warning addToCart" data-id="{{movie.id}}">Add To Cart</a></li>
 						</ul>

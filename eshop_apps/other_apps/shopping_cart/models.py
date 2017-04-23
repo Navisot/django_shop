@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from decimal import Decimal
 
 
 class Orders(models.Model):
@@ -12,6 +13,8 @@ class Orders(models.Model):
     delivery_date = models.DateField(blank=True, null=True)
     session_user_id = models.TextField(blank=True)
     shopping_cart = models.TextField(blank=True, null=True)
+    shopping_cart_details = models.TextField(blank=True, null=True)
+    total_order_price = models.DecimalField(max_digits=10, decimal_places=2, default=Decimal('0.00'))
 
     def __str__(self):
         return "User: %s - Created: %s" % (self.user_id, self.created)

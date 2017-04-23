@@ -27,6 +27,7 @@ def add_to_cart(request):
         result['status'] = 'fail'
         return HttpResponse(json.dumps(result), content_type='application/json')
 
+
 @login_required
 def add_to_cart_tmdb(request):
     result = {}
@@ -80,7 +81,6 @@ def get_checkout_review(request):
 
 @login_required
 def checkout(request):
-
     # Get Current Cart
     current_cart = Cart(request)
     # END
@@ -140,6 +140,13 @@ def checkout(request):
     myList = ",".join([str(item.product.id) for item in current_cart])
     # END
 
+    all_products = []
+    for item in current_cart:
+        temp = {'item': item.product.id, 'quantity': item.quantity}
+        all_products.append(temp)
+
+    json_products = json.dumps(all_products)
+
     # Get Post DateTime Details And Create DateTime Objects
     delivery_time = request.POST.get('timepicker')
     delivery_date = request.POST.get('datepicker')
@@ -157,13 +164,15 @@ def checkout(request):
         cart_details_for_template.append(item)
     # END
 
-    # Add New Reservation
+    # Add New Order
     new_order = Orders(
         user_id=request.user.id,
         session_user_id=request.session.session_key,
         shopping_cart=myList,
+        shopping_cart_details=json_products,
         delivery_date=dt_store,
         delivery_time=delivery_time,
+        total_order_price=myCart['total_price']
     )
     new_order.save()
     # END
