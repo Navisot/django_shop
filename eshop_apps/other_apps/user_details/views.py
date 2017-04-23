@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from ..shopping_cart.models import Orders, Invoices
-from ..homeapp.models import Movies
 from cart.cart import Cart
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
 from suds.client import Client
 from suds.cache import NoCache
-from datetime import datetime
 import json
-import ast
 
 
 @login_required
@@ -22,22 +19,15 @@ def get_user_history(request):
     user_id = request.user.id
     orders = Orders.objects.filter(user_id=user_id)
     invoices = Invoices.objects.filter(user_id=user_id)
-    full_results = []
-    i = 0
+    order_details = []
     for order in orders:
-        temp_movies = order.shopping_cart
-        temp = {'order_id': order.id, 'movies': temp_movies.split(","), 'created': order.created}
-        full_results.append(temp)
-        i += 1
-    total = []
-    for result in full_results:
-        for movie in result['movies']:
-            movie_details = Movies.objects.get(pk=movie)
-            temp = {'order_id': result['order_id'], 'title': movie_details.title, 'movie_id': movie}
-            total.append(temp)
+        shopping_cart = json.loads(order.shopping_cart_details)
+        for product in shopping_cart:
+            build_template_vars = {'product_id': product['item_id'], 'product_price': product['price'], 'product_title': product['item_title'], 'quantity': product['quantity'], 'order_id': order.id}
+            order_details.append(build_template_vars)
     return render(request, 'user_history.html', {
         'orders': orders,
-        'movies': total,
+        'order_details': order_details,
         'invoices': invoices,
         'total_items': myCart['total_items'],
         'total_price': myCart['total_price'],
@@ -98,18 +88,17 @@ def save_personal_details(request):
 def create_pdf(request, invoice_id):
     # Create the HttpResponse object with the appropriate PDF headers.
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
-
+    response['Content-Disposition'] = 'attachment; filename="invoice.pdf"'
     # Create the PDF object, using the response object as its "file."
     document = canvas.Canvas(response)
     invoice_details = Invoices.objects.get(pk=invoice_id)
     order_details = Orders.objects.get(pk=invoice_details.order_id)
-    movie_details = invoice_details.shopping_cart.split(",")
-    movie_titles = []
-    for m in movie_details:
-        mov = Movies.objects.get(pk=m)
-        temp = {'title': mov.title}
-        movie_titles.append(temp)
+    shopping_cart = json.loads(order_details.shopping_cart_details)
+    movie_details = []
+    for product in shopping_cart:
+        build_template_vars = {'product_id': product['item_id'], 'product_price': product['price'],
+                               'product_title': product['item_title'], 'quantity': product['quantity']}
+        movie_details.append(build_template_vars)
     # Draw things on the PDF. Here's where the PDF generation happens.
     # See the ReportLab documentation for the full list of functionality.
     document.setStrokeColorRGB(0.13, 0.55, 0.87)
@@ -130,8 +119,8 @@ def create_pdf(request, invoice_id):
     i = 540
     x = 1
     document.setFont('Helvetica', 12)
-    for movie in movie_titles:
-        document.drawCentredString(300, i, str(x) + '. ' + movie['title'])
+    for movie in movie_details:
+        document.drawCentredString(300, i, str(x) + '. ' + movie['product_title'] + ' x ' + str(movie['quantity']) + ' ('+ str(movie['product_price']) +'€)')
         i -= 20
         x += 1
     document.setFont('Helvetica', 14)

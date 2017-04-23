@@ -51,25 +51,6 @@
 			  		<div class="text-center special"><span class="price_special">{{ total_price }} €</span></div>
 				 <div class="clearfix"></div>
 			<h4><a class="btn btn-success btn-block" href="{% url 'get_checkout_review' %}">Continue To Checkout</a></h4>
-
-			 <!--<div class="clearfix"></div>-->
-			  <!--<br>-->
-			  <!--<strong style="text-decoration: underline;">Important (Invoice Details):</strong><br>-->
-			  <!--In order to place order you must first fill in your personal details in <a href="{% url 'user_profile' %}">user profile</a> section.<br><br>-->
-			  <!--<h4>1. Required Delivery Details</h4><br>-->
-			  <!--<form action="{% url 'checkout_view' %}" method="post">-->
-				  <!--{% csrf_token %}-->
-				  <!--<label for="datepicker">Delivery Date: <sup>*</sup></label><br>-->
-				  <!--<input type="text" id="datepicker" size="35" name="datepicker" required><br>-->
-				  <!--<label for="timepicker">Delivery Time: <sup>*</sup></label><br>-->
-				  <!--<input type="text" id="timepicker" size="35" name="timepicker" required><br><br>-->
-				  <!--<h4>2. Optional Invoice Details</h4><br>-->
-				  <!--<label for="company_name">Company Name:</label><br>-->
-				  <!--<input type="text" id="company_name" size="35" name="company_name"><br>-->
-				  <!--<label for="telephone">Telephone:</label><br>-->
-				  <!--<input type="text" id="telephone" size="35" name="telephone"><br><br>-->
-			 		<!--<input type="submit" class="btn btn-success btn-block" {% if total_items == 0 %} disabled {% endif %} value="Place Order"/>-->
-			  <!--</form>-->
 			</div>
 
 

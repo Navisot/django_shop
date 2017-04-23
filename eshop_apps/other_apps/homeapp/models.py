@@ -17,7 +17,6 @@ class Movies(models.Model):
     year = models.CharField(max_length=10)
     cover = models.ImageField(upload_to='static/uploads/', default='static/uploads/no-img.png')
     tmdb_id = models.IntegerField(default=0)
-    quantity = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=Decimal('0.00'))
 
     def __str__(self):

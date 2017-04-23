@@ -142,9 +142,8 @@ def checkout(request):
 
     all_products = []
     for item in current_cart:
-        temp = {'item': item.product.id, 'quantity': item.quantity}
+        temp = {'item_id': item.product.id, 'item_title': item.product.title, 'quantity': item.quantity, 'price': str(item.total_price)}
         all_products.append(temp)
-
     json_products = json.dumps(all_products)
 
     # Get Post DateTime Details And Create DateTime Objects

@@ -133,3 +133,14 @@ ul.nav-bottom li a {
     display: inline-block;
     margin: 0.1em 0;
 }
+
+span.total_price {
+    font-size: 18px;
+    background: #e4e4e4;
+    border-radius: 5px;
+    padding:5px;
+}
+
+.mg {
+    margin: 10px;
+}
