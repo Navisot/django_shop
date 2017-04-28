@@ -18,7 +18,13 @@
 						<ul class="qty">
 							<li><p class="btn btn-primary btn-xs" style="color:white;font-size:14px;">Available For Rent : {{ movie_quantity }}</p></li><br>
                             <li><p class="btn btn-success btn-xs" style="color:white;font-size:14px;">Price Per Day : {{ movie.price }} €</p></li><br>
-                            <li><a href="#" class="btn btn-xs btn-warning addToCart" data-id="{{movie.id}}">Add To Cart</a></li>
+                            {% if user.is_authenticated %}
+                                {% if movie_quantity != 0 %}
+                                    <li><a href="#" class="btn btn-xs btn-warning addToCart" data-id="{{movie.id}}">Add To Cart</a></li>
+                                {% else %}
+                                    <li><a class="btn btn-danger btn-sm" href="#">Out Of Stock</a></li>
+                                {%endif %}
+                            {% endif %}
 						</ul>
 
 							 <div class="delivery">
@@ -101,12 +107,14 @@
                     console.log(data);
                     if (data.status == 'success') {
                         alert('Movie Added In Your Cart');
+                    } else if (data.status == 'no_available'){
+                        alert('Out Of Stock')
                     } else {
-                        alert('Something Went Wrong');
+                        alert('Something Went Wrong')
                     }
                 },
                 error: function(){
-                    alert('Ajaxian Error');
+                    alert('Ajaxian Error')
                 }
            });
            window.location.reload(true);

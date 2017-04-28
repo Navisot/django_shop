@@ -28,4 +28,4 @@ class GenreMovies(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "Movie: %s | Genre: %s" % (self.movie_id, self.genre_id)
+        return "%s | %s" % (self.movie.title, self.genre.title)

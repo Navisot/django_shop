@@ -16,7 +16,17 @@
                     </div>
                 </a>
                 <p><a href="{% url 'movie_details' movie_id=movie.id  %}" title="{{movie.title}}">{{ movie.title | truncatechars:20 }}</a></p><br>
-            <a class="btn btn-warning btn-sm addToCart" href="#" data-id="{{ movie.id }}">Add To Cart</a>
+                {% if user.is_authenticated %}
+                    {% for q in quantities %}
+                        {% if q.id == movie.id %}
+                            {% if q.quantity == 0 %}
+                                <a class="btn btn-danger btn-sm" href="#">Out Of Stock</a>
+                            {% else %}
+                                <a class="btn btn-warning btn-sm addToCart" href="#" data-id="{{ movie.id }}">Add To Cart</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
             {% endfor %}
 
@@ -37,8 +47,10 @@
                     console.log(data);
                     if (data.status == 'success') {
                         alert('Movie Added In Your Cart');
+                    } else if (data.status == 'no_available'){
+                        alert('Out Of Stock')
                     } else {
-                        alert('Something Went Wrong');
+                        alert('Something Went Wrong')
                     }
                 },
                 error: function(){

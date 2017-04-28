@@ -39,7 +39,9 @@
                 {% endif %}
                 <p>
                     {% if result.id in store_ids %}
-                        <a class="addToCart" href="#" title="Add To Cart" data-id="{{result.id}}"><i class="fa fa-shopping-cart orange"></i></a>
+                        {% if user.is_authenticated %}
+                            <a class="addToCart" href="#" title="Add To Cart" data-id="{{result.id}}"><i class="fa fa-shopping-cart orange"></i></a>
+                        {% endif %}
                     {% endif %}
                     {% if result.original_name %}
                     <a href="" title="{{result.original_name}}">{{ result.original_name | truncatechars:20 }}</a>
@@ -70,8 +72,10 @@
                     console.log(data);
                     if (data.status == 'success') {
                         alert('Movie Added In Your Cart');
+                    } else if (data.status == 'no_available'){
+                        alert('Out Of Stock')
                     } else {
-                        alert('Something Went Wrong');
+                        alert('Something Went Wrong')
                     }
                 },
                 error: function(){

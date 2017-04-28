@@ -11,14 +11,28 @@ from ..homeapp.models import Movies
 from ..shopping_cart.models import Orders, Invoices
 import datetime
 import random
+from suds.client import Client
+
+
+def out_of_stock(movie_id):
+    client = Client('http://soap.dev/server.php?wsdl')
+    movie_quantity = client.service.getQuantity(movie_id)
+    if movie_quantity == 0:
+        return True
+    else:
+        return False
+
 
 @login_required
 def add_to_cart(request):
     result = {}
     if request.is_ajax():
-        movie_id = request.POST['movie_id']
+        post_movie_id = request.POST['movie_id']
+        movie = Movies.objects.get(pk=post_movie_id)
+        if out_of_stock(post_movie_id):
+            result['status'] = 'no_available'
+            return HttpResponse(json.dumps(result), content_type='application/json')
         quantity = 1
-        movie = Movies.objects.get(id=movie_id)
         cart = Cart(request)
         cart.add(movie, movie.price, quantity)
         result['status'] = 'success'
@@ -35,6 +49,9 @@ def add_to_cart_tmdb(request):
         tmdb_id = request.POST['tmdb_id']
         quantity = 1
         movie = Movies.objects.get(tmdb_id=tmdb_id)
+        if out_of_stock(movie.id):
+            result['status'] = 'no_available'
+            return HttpResponse(json.dumps(result), content_type='application/json')
         cart = Cart(request)
         cart.add(movie, movie.price, quantity)
         result['status'] = 'success'
@@ -61,29 +78,22 @@ def remove_from_cart(request):
 
 @login_required
 def get_cart(request):
-    current_cart = Cart(request)
-    myCart = Cart.get_cart_details(current_cart)
     return render(request, 'cart.html', {
         'cart': Cart(request),
-        'total_items': myCart['total_items'],
-        'total_price': myCart['total_price'],
     })
 
 
 def get_checkout_review(request):
-    current_cart = Cart(request)
-    myCart = Cart.get_cart_details(current_cart)
     return render(request, 'checkout_review.html', {
         'cart': Cart(request),
-        'total_items': myCart['total_items'],
-        'total_price': myCart['total_price'],
     })
 
 @login_required
 def checkout(request):
+
+    client = Client('http://soap.dev/server.php?wsdl')
     # Get Current Cart
     current_cart = Cart(request)
-    # END
     myCart = Cart.get_cart_details(current_cart)
     logged_in_user = User.objects.get(pk=request.user.id)
     first_name = logged_in_user.first_name
@@ -95,31 +105,37 @@ def checkout(request):
     telephone = request.POST.get('telephone')
     company = request.POST.get('company_name')
 
+    # Check if user wants greater quantity of products than one available in warehouse
+    for item in current_cart:
+        item_soap_qty = client.service.getQuantity(item.product.id)
+        if item.quantity > item_soap_qty:
+            template_soap = int(item_soap_qty)
+            return render(request, 'checkout_review.html', {
+                'error_message': 'WARNING! There are only ' + str(template_soap) + ' available pieces for the movie ' + str(item.product.title) + '. You added ' + str(item.quantity) + ' in your cart.',
+                'cart': Cart(request)
+            })
+
     if telephone and not telephone.isdigit():
         return render(request, 'checkout_review.html', {
             'error_message': telephone_error,
-            'cart': Cart(request),
-            'total_items': myCart['total_items'],
-            'total_price': myCart['total_price']})
+            'cart': Cart(request)
+            })
 
     if not first_name:
         return render(request, 'checkout_review.html', {
             'error_message': error_message,
-            'cart': Cart(request),
-            'total_items': myCart['total_items'],
-            'total_price': myCart['total_price']})
+            'cart': Cart(request)
+            })
     if not last_name:
         return render(request, 'checkout_review.html', {
             'error_message': error_message,
-            'cart': Cart(request),
-            'total_items': myCart['total_items'],
-            'total_price': myCart['total_price']})
+            'cart': Cart(request)
+            })
     if not email:
         return render(request, 'checkout_review.html', {
             'error_message': error_message,
-            'cart': Cart(request),
-            'total_items': myCart['total_items'],
-            'total_price': myCart['total_price'],})
+            'cart': Cart(request)
+            })
 
     # Get Current Cart
     current_cart = Cart(request)
@@ -130,9 +146,7 @@ def checkout(request):
         context = Movies.objects.all()
         return render(request, 'homepage.html', {
             'data': context,
-            'homepage': True,
-            'total_items': myCart['total_items'],
-            'total_price': myCart['total_price'],
+            'homepage': True
         })
     # END
 
@@ -174,6 +188,11 @@ def checkout(request):
         total_order_price=myCart['total_price']
     )
     new_order.save()
+    # END
+
+    # Update SOAP DB
+    for item in current_cart:
+        client.service.removeQuantity(item.product.id, item.quantity)
     # END
 
     # Get Latest Order Id
