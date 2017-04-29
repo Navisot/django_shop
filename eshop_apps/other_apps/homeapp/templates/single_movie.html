@@ -31,7 +31,8 @@
 							 <div class="clearfix"></div>
 				        </div>
 					   </div>
-                     <desc>{{ movie.description}}</desc>
+                     <desc>{{ movie.description}}</desc><br>
+                     <p></p>
 					   <div class="clearfix"></div>
 				  </div>
 			 </div>
@@ -93,6 +94,24 @@
 
 			<div class="clearfix"> </div>
 	 </div>
+
+<div class="col-md-12">
+    <h2 class="text-center">Top Actors</h2><br>
+    {% for person in credits %}
+        {% if forloop.counter <= 4 %}
+            <div class="col-md-3 grid-top">
+                <a href="/search/actor?query={{person.name}}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="https://image.tmdb.org/t/p/w276_and_h350_bestv2/{{person.profile_path}}" alt="">
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-left    b-delay03 ">
+                            <span>Actor's Movies</span>
+                        </h3>
+                    </div>
+                </a>
+                <p class="text-center">{{person.name}}</p><br>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
 
 <script>
         $(".addToCart").on('click', function(e){

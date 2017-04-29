@@ -37,11 +37,13 @@ def movie_details(request, movie_id):
     movie_quantity = client.service.getQuantity(context.id)
     api = json.load(urlopen('https://api.themoviedb.org/3/movie/' + str(context.tmdb_id) + '?api_key=3a5fa430d771cb147fb889d04e147c3c'))
     api_videos = json.load(urlopen('https://api.themoviedb.org/3/movie/' + str(context.tmdb_id) + '/videos?api_key=3a5fa430d771cb147fb889d04e147c3c'))
+    api_credits = json.load((urlopen('https://api.themoviedb.org/3/movie/' + str(context.tmdb_id) +'/credits?api_key=3a5fa430d771cb147fb889d04e147c3c')))
     return render(request, 'single_movie.html', {
         'movie': context,
         'movie_quantity': int(movie_quantity),
         'api': api,
         'video': api_videos,
+        'credits': api_credits['cast']
     })
 
 
@@ -51,21 +53,24 @@ def movie_details_by_tmdb(request, tmdb_id):
     movie_quantity = client.service.getQuantity(context.id)
     api = json.load(urlopen('https://api.themoviedb.org/3/movie/' + str(context.tmdb_id) + '?api_key=3a5fa430d771cb147fb889d04e147c3c'))
     api_videos = json.load(urlopen('https://api.themoviedb.org/3/movie/' + str(context.tmdb_id) + '/videos?api_key=3a5fa430d771cb147fb889d04e147c3c'))
+    api_credits = json.load((urlopen('https://api.themoviedb.org/3/movie/' + str(context.tmdb_id) +'/credits?api_key=3a5fa430d771cb147fb889d04e147c3c')))
     return render(request, 'single_movie.html', {
         'movie': context,
         'api': api,
         'video': api_videos,
-        'movie_quantity': int(movie_quantity)
+        'movie_quantity': int(movie_quantity),
+        'credits': api_credits['cast']
     })
 
 
 def movie_details_only_from_tmdb(request, tmdb_id):
-    api = json.load(urlopen(
-        'https://api.themoviedb.org/3/movie/' + str(tmdb_id) + '?api_key=3a5fa430d771cb147fb889d04e147c3c'))
+    api = json.load(urlopen('https://api.themoviedb.org/3/movie/' + str(tmdb_id) + '?api_key=3a5fa430d771cb147fb889d04e147c3c'))
     api_videos = json.load(urlopen('https://api.themoviedb.org/3/movie/' + str(tmdb_id) + '/videos?api_key=3a5fa430d771cb147fb889d04e147c3c'))
+    api_credits = json.load((urlopen('https://api.themoviedb.org/3/movie/' + str(tmdb_id) +'/credits?api_key=3a5fa430d771cb147fb889d04e147c3c')))
     return render(request, 'single_movie_tmdb.html', {
         'api': api,
         'video': api_videos,
+        'credits': api_credits['cast']
     })
 
 
@@ -110,3 +115,22 @@ def search_movie_multi(request):
         'current_page': int(page)
     })
 
+
+def search_movie_by_actor(request):
+    query = request.GET.get('query', '')
+    page = request.GET.get('page', '')
+    if page is None or page == '' or page == 0:
+        page = 1
+    store_ids = Movies.objects.values_list('tmdb_id', flat=True)
+    api = json.load(urlopen('https://api.themoviedb.org/3/search/person?api_key=3a5fa430d771cb147fb889d04e147c3c&search_type=ngram&query=' + str(query) + '&page='+str(page)))
+    actor_id = api['results'][0]['id']
+    info = json.load(urlopen('https://api.themoviedb.org/3/discover/movie?api_key=3a5fa430d771cb147fb889d04e147c3c&with_cast=' + str(actor_id)))
+    return render(request, 'movies_actors.html', {
+        'data': info,
+        'actor_id': actor_id,
+        'store_ids': store_ids,
+        'homepage': False,
+        'keyword': query,
+        'total_pages': range(api['total_pages']),
+        'current_page': int(page)
+    })

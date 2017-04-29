@@ -35,6 +35,9 @@
             {% endif %}
             <div class="clearfix"></div>
         </div>
+         {% if not data %}
+                <h1>No Results Found</h1>
+            {% else %}
         <nav class="in">
             {% if data.has_other_pages %}
               <ul class="pagination">
@@ -58,6 +61,7 @@
               </ul>
             {% endif %}
         </nav>
+        {% endif %}
     </div>
 
     <script>
