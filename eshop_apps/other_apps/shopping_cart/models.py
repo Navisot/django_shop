@@ -19,6 +19,9 @@ class Orders(models.Model):
     def __str__(self):
         return "User: %s - Created: %s" % (self.user_id, self.created)
 
+    class Meta:
+        verbose_name_plural = 'Orders'
+
 
 class Invoices(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -35,3 +38,6 @@ class Invoices(models.Model):
 
     def __str__(self):
         return "First Name: %s - Last Name: %s - Created: %s" % (self.first_name, self.last_name, self.created)
+
+    class Meta:
+        verbose_name_plural = 'Invoices'

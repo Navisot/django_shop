@@ -10,6 +10,9 @@ class Genre(models.Model):
     def __str__(self):
         return "%s" % self.title
 
+    class Meta:
+        verbose_name_plural = 'Genres'
+
 
 class Movies(models.Model):
     title = models.CharField(max_length=100)
@@ -22,6 +25,9 @@ class Movies(models.Model):
     def __str__(self):
         return "%s - %s" % (self.title, self.year)
 
+    class Meta:
+        verbose_name_plural = 'Movies'
+
 
 class GenreMovies(models.Model):
     movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
@@ -29,3 +35,6 @@ class GenreMovies(models.Model):
 
     def __str__(self):
         return "%s | %s" % (self.movie.title, self.genre.title)
+
+    class Meta:
+        verbose_name_plural = 'Genre_Movies'

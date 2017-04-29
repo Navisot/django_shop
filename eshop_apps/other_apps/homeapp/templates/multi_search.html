@@ -57,6 +57,21 @@
             {% endif %}
             <div class="clearfix"></div>
         </div>
+        <nav class="in">
+              <ul class="pagination">
+                  {% for page in total_pages %}
+                  {% if forloop.counter == current_page %}
+                    <li class="active">
+                        <a href="/search/multi?query={{keyword}}&page={{forloop.counter}}">{{forloop.counter}} <span class="sr-only"></span></a>
+                    </li>
+                  {% else %}
+                    <li>
+                        <a href="/search/multi?query={{keyword}}&page={{forloop.counter}}">{{forloop.counter}} <span class="sr-only"></span></a>
+                    </li>
+                  {% endif %}
+                  {% endfor %}
+              </ul>
+        </nav>
     </div>
 
     <script>

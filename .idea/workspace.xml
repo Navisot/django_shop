@@ -2,31 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bed632ad-9fea-452f-b504-315bcb513b2d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/migrations/0002_remove_movies_quantity.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/registration/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/registration/registration_form.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie_tmdb.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templatetags/custom_date.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/eshop/settings.py" afterPath="$PROJECT_DIR$/eshop_apps/eshop/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/urls.py" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/views.py" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/admin.py" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/models.py" afterPath="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/static/css/custom.css" afterPath="$PROJECT_DIR$/eshop_apps/static/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshop_apps/templates/includes/right-menu.html" afterPath="$PROJECT_DIR$/eshop_apps/templates/includes/right-menu.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,9 +74,14 @@
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="252">
+              <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="56" selection-end-column="14" />
+              <folding>
+                <element signature="e#1738#1745#0" expanded="true" />
+                <element signature="e#1827#1834#0" expanded="true" />
+                <element signature="e#2338#2345#0" expanded="true" />
+                <element signature="e#2427#2434#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,9 +89,55 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42">
-              <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            <state relative-caret-position="1596">
+              <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="752">
+              <caret line="42" column="39" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="32" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,20 +145,13 @@
       <file leaf-file-name="genre_movies.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="113" column="79" lean-forward="false" selection-start-line="113" selection-start-column="79" selection-end-line="113" selection-end-column="79" />
+            <state relative-caret-position="754">
+              <caret line="59" column="14" lean-forward="false" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
               <folding>
-                <element signature="e#24#63#0" expanded="true" />
+                <element signature="e#1915#1922#0" expanded="true" />
+                <element signature="e#2004#2011#0" expanded="true" />
+                <element signature="e#2515#2522#0" expanded="true" />
+                <element signature="e#2604#2611#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,30 +160,18 @@
       <file leaf-file-name="multi_search.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="43" column="35" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="43" selection-end-column="35" />
+            <state relative-caret-position="273">
+              <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="single_movie.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2373">
-              <caret line="113" column="21" lean-forward="true" selection-start-line="107" selection-start-column="20" selection-end-line="113" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cart.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/python2.7/site-packages/cart/cart.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+            <state relative-caret-position="168">
+              <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -217,27 +233,28 @@
         <option value="$PROJECT_DIR$/eshop_apps/templates/includes/footer.html" />
         <option value="$PROJECT_DIR$/eshop_apps/templates/includes/slideshow.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/user_details/urls.py" />
-        <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/models.py" />
         <option value="$PROJECT_DIR$/lib/python2.7/site-packages/cart/cart.py" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/templates/cart.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/user_details/templates/user_history.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/user_details/views.py" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/templates/checkout_review.html" />
-        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py" />
         <option value="$PROJECT_DIR$/eshop_apps/templates/base.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/context_processors.py" />
         <option value="$PROJECT_DIR$/eshop_apps/templates/includes/right-menu.html" />
         <option value="$PROJECT_DIR$/eshop_apps/eshop/urls.py" />
         <option value="$PROJECT_DIR$/eshop_apps/eshop/settings.py" />
-        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/urls.py" />
-        <option value="$PROJECT_DIR$/eshop_apps/static/css/custom.css" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/views.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html" />
+        <option value="$PROJECT_DIR$/eshop_apps/static/css/custom.css" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html" />
         <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py" />
-        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html" />
-        <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/views.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/models.py" />
+        <option value="$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/admin.py" />
       </list>
     </option>
   </component>
@@ -267,6 +284,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -423,8 +442,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,7 +450,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="Cart&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/lib/python2.7/site-packages/cart/cart.py&#10;cus&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;ho&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/homepage.html&#10;sing&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/single_movie.html&#10;heade&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;home&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/homepage.html&#10;settings&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/eshop/settings.py&#10;settin&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/eshop/settings.py&#10;base&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/base.html&#10;genre&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/genre_movies.html&#10;view&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/views.py&#10;men&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/right-menu.html&#10;header.ht&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;checkout&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/shopping_cart/templates/checkout_review.html&#10;custom.c&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;cart&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/shopping_cart/templates/cart.html&#10;single&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/single_movie.html&#10;setti&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/eshop/settings.py&#10;user&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/user_details/templates/user_history.html&#10;cart.h&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/shopping_cart/templates/cart.html&#10;user_hi&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/user_details/templates/user_history.html&#10;single_movie&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/single_movie.html&#10;homepa&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/homepage.html&#10;user_&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/user_details/templates/user_history.html&#10;header&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;slid&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/slideshow.html&#10;footer&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/footer.html&#10;cust&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;head&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/head.html&#10;UserCrea&#9;null&#9;null&#10;User&#9;null&#9;null&#10;custom.&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;custom&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templatetags/custom_date.py&#10;views&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/views.py&#10;head.h&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/head.html&#10;urls&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/urls.py&#10;custo&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css" />
+    <property name="SearchEverywhereHistoryKey" value="custo&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;Cart&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/lib/python2.7/site-packages/cart/cart.py&#10;cus&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;ho&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/homepage.html&#10;sing&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/single_movie.html&#10;heade&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;home&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/homepage.html&#10;settings&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/eshop/settings.py&#10;settin&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/eshop/settings.py&#10;base&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/base.html&#10;genre&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/genre_movies.html&#10;view&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/views.py&#10;men&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/right-menu.html&#10;header.ht&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;checkout&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/shopping_cart/templates/checkout_review.html&#10;custom.c&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;cart&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/shopping_cart/templates/cart.html&#10;single&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/single_movie.html&#10;setti&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/eshop/settings.py&#10;user&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/user_details/templates/user_history.html&#10;cart.h&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/shopping_cart/templates/cart.html&#10;user_hi&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/user_details/templates/user_history.html&#10;single_movie&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/single_movie.html&#10;homepa&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templates/homepage.html&#10;user_&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/user_details/templates/user_history.html&#10;header&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/header.html&#10;slid&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/slideshow.html&#10;footer&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/footer.html&#10;cust&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;head&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/head.html&#10;UserCrea&#9;null&#9;null&#10;User&#9;null&#9;null&#10;custom.&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/static/css/custom.css&#10;custom&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/templatetags/custom_date.py&#10;views&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/views.py&#10;head.h&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/templates/includes/head.html&#10;urls&#9;FILE&#9;file:///Users/nikavr/Development/PythonDev/hua/dvdstore_env/eshop_apps/other_apps/homeapp/urls.py" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -685,24 +702,24 @@
     <frame x="0" y="23" width="1680" height="957" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27078238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27383864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -738,42 +755,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/518f1c4e/08a531ba-8266-47f2-ab5f-455bc8d5aafc/dvdstore_db.public.shopping_cart_orders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/518f1c4e/08a531ba-8266-47f2-ab5f-455bc8d5aafc/dvdstore_db.public.homeapp_movies">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/518f1c4e/08a531ba-8266-47f2-ab5f-455bc8d5aafc/dvdstore_db.public.homeapp_movies">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/python2.7/site-packages/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -1014,13 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1059,14 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eshop_apps/eshop/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1092,7 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +1065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +1072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,7 +1079,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1848">
           <caret line="98" column="21" lean-forward="false" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +1086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +1098,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,7 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,33 +1112,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py">
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="62" lean-forward="false" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+        <state relative-caret-position="399">
+          <caret line="113" column="79" lean-forward="false" selection-start-line="113" selection-start-column="79" selection-end-line="113" selection-end-column="79" />
           <folding>
-            <element signature="e#0#32#0" expanded="false" />
+            <element signature="e#24#63#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/static/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,18 +1133,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html">
+    <entry file="file://$PROJECT_DIR$/eshop_apps/static/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        <state relative-caret-position="768">
+          <caret line="157" column="1" lean-forward="false" selection-start-line="157" selection-start-column="1" selection-end-line="157" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py">
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        <state relative-caret-position="273">
+          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1210,28 +1152,98 @@
     <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/single_movie.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2373">
-          <caret line="113" column="21" lean-forward="true" selection-start-line="107" selection-start-column="20" selection-end-line="113" selection-end-column="21" />
+          <caret line="113" column="21" lean-forward="false" selection-start-line="107" selection-start-column="20" selection-end-line="113" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#p#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/multi_search.html">
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="43" column="35" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="43" selection-end-column="35" />
+        <state relative-caret-position="168">
+          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/views.py">
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="113" column="79" lean-forward="false" selection-start-line="113" selection-start-column="79" selection-end-line="113" selection-end-column="79" />
+        <state relative-caret-position="252">
+          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="56" selection-end-column="14" />
+          <folding>
+            <element signature="e#1738#1745#0" expanded="true" />
+            <element signature="e#1827#1834#0" expanded="true" />
+            <element signature="e#2338#2345#0" expanded="true" />
+            <element signature="e#2427#2434#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/templates/genre_movies.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="59" column="14" lean-forward="false" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding>
+            <element signature="e#1915#1922#0" expanded="true" />
+            <element signature="e#2004#2011#0" expanded="true" />
+            <element signature="e#2515#2522#0" expanded="true" />
+            <element signature="e#2604#2611#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/user_details/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/homeapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshop_apps/other_apps/shopping_cart/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="42" column="39" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
