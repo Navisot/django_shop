@@ -156,3 +156,15 @@ span.total_price {
     background-color: #EF5F21;
     border-color: #EF5F21;
 }
+
+a.logodjango {
+    font-size: 26px;
+    color: #d06a1d;
+    font-family: cursive;
+    text-decoration: none;
+}
+
+small.description_logo {
+    letter-spacing: 1px;
+    color: darkgray;
+}
