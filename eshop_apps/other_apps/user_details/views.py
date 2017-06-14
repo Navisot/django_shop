@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from ..shopping_cart.models import Orders, Invoices
@@ -53,35 +53,36 @@ def save_personal_details(request):
     # Basic Validation Rules
     if len(first_name) <= 3:
         return render(request, 'user_profile.html', {
-            'error_message': 'Please Fill In Your Personal Details Correctly (Min Of 3 Chars is Required)',
+            'error_message': 'Please fill in your name correctly (3 chars minimum).',
             'total_items': myCart['total_items'],
             'total_price': myCart['total_price'],
         })
     if len(last_name) <= 3:
         return render(request, 'user_profile.html', {
-            'error_message': 'Please Fill In Your Personal Details Correctly (Min Of 3 Chars is Required)',
+            'error_message': 'Please fill in your last name correctly (3 chars minimum).',
             'total_items': myCart['total_items'],
             'total_price': myCart['total_price'],
         })
     if hasNumbers(first_name):
         return render(request, 'user_profile.html', {
-            'error_message': 'Please Fill In Your Personal Details Correctly (Min Of 3 Chars is Required)',
+            'error_message': 'Please fill in a valid name without numeric values.',
             'total_items': myCart['total_items'],
             'total_price': myCart['total_price'],
         })
     if hasNumbers(last_name):
         return render(request, 'user_profile.html', {
-            'error_message': 'Please Fill In Your Personal Details Correctly (Min Of 3 Chars is Required)',
+            'error_message': 'Please fill in a valid name without numeric values.',
             'total_items': myCart['total_items'],
             'total_price': myCart['total_price'],
         })
     # END
     User.objects.filter(pk=user_id).update(first_name=first_name, last_name=last_name)
-    return render(request, 'user_profile.html', {
-            'success_message': 'Personal Details Successfully Submitted!',
-            'total_items': myCart['total_items'],
-            'total_price': myCart['total_price'],
-        })
+    # return render(request, 'user_profile.html', {
+    #         'success_message': 'Personal Details Successfully Submitted!',
+    #         'total_items': myCart['total_items'],
+    #         'total_price': myCart['total_price'],
+    #     })
+    return redirect('/user/profile')
 
 
 @login_required
